@@ -1,0 +1,89 @@
+#include<stdio.h>
+
+	int main(){
+	int caser, num = 0, a=0, b=0, c=0;
+	printf("Ingrese el numero para hacer: \n 1(ver si el numero es negativo)\n 2(ver su es par o inpar)\n 3(ver si es multiplo de 2 o 3)\n 4(dados 3 N° cual es el mayor)\n");
+	scanf("%d", & caser);
+	
+	switch(caser) {
+		case 1:
+		printf("Ingrese el numero para ver si es positivo o negativo: ");
+		scanf("%d", &num);
+		if (num<0)
+		{
+		printf("El numero es negativo");
+		}
+		if (num>0) {
+		printf("El numero es positivo");
+		}
+		break;
+		
+		case 2:
+			printf("Ingrese el numero para ver si es par o inpar: ");
+			scanf("%d", &num);
+			if (num%2==0){
+				printf("El numero es par");
+			}
+			else{
+				printf("El numero es inpar");
+			}
+		break;
+		
+		case 3:
+			printf("Ingrese el numero para ver si es multiplo de 2 o de 3: ");
+			scanf("%d", &num);
+			if (num%2==0){
+				printf("El numero el multiplo de 2\n");
+			}
+			if (num%3==0){
+				printf("El numero es multiplo de 3\n");
+			}
+		break;
+		
+		case 4:
+			printf("Ingrese el valor de A: ");
+			scanf("%d", & a);
+			printf("Ingrese el valor de B: ");
+			scanf("%d", & b);
+			printf("Ingrese el valor de C: ");
+			scanf("%d", & c);
+			
+			if (a>b){
+				if(a>c){
+					printf("A es el mayor");break;
+				}
+				else{ if(a==c){
+				printf("A y C son los mayores");break;}
+				else{
+				printf("C es el mayor");break;
+				}
+				
+				}
+			}
+			if (a==b){
+				if(a>c){
+					printf("A y B son los mayores");break;
+				}
+				else{ if (a==c){
+					printf("los 3 son iguales");break;}
+				else{
+					printf("C es el mayor");break;
+				}
+				
+				}
+			}
+			if(b>c){
+				printf("B es el mayor");break;}
+			else{ if (b==c){
+				printf("B y C son iguales");break;}
+			else{
+				printf("C es el mayor");break;
+			}	
+			
+				}
+			}
+	
+	
+	
+	
+	};
