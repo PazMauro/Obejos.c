@@ -1,0 +1,112 @@
+#include<stdio.h>
+int main(){
+	int caser, alumnos, precio, preciototal;
+	float precioxalumnos;
+	printf("Ingrese el numero para hacer: 1(ver un algoritmo para ver cuanto hay que pagar por el alquiler de un micro)\n 2(para ver cuanto gana el vendedor con su comision)\n 3(para ver las notas del alumno)\n 4()\n 5()\n");
+	scanf("%d", & caser);
+	
+	switch(caser) {
+		case 1: {
+			printf("Ingrese la cantidad de alumnos que van a asistir al viaje de estudio: ");
+			scanf("%d", & alumnos);
+			
+			if(alumnos>=100){
+				precio=500*alumnos;
+			}
+			else if(alumnos>=50 && alumnos<=99){
+				precio=400*alumnos;
+			}
+			else if(alumnos>=30 && alumnos<=49){
+				precio=300*alumnos;
+			}
+			else if(alumnos<30){
+				precio=6000;
+				printf("%d",precio);
+			}
+			
+			printf("El precio que hay que pagar por el alquiler del micro de viaje de estudio es %d\n", precio);
+			
+			preciototal=alumnos*precio;
+			
+			precioxalumnos=precio/alumnos;
+			
+			printf("El precio total a pagar por el alquiler es %d\n Los alumnos deben pagar %f\n",preciototal, precioxalumnos);
+			
+			break;
+		}
+		
+		case 2:{
+			int n=3, venta,totalventas,comision,sueldototal,sueldo;
+			
+			printf("Ingrese el sueldo base: ");
+			scanf("%d", & sueldo);
+			
+			
+			
+			for(int i=0; i<n; i++){
+				printf("Ingrese la suma de la venta: ");
+				scanf("%d", & venta);
+				
+				totalventas=totalventas+venta;
+			}
+			
+			comision=totalventas*0.1;
+			
+			sueldototal=sueldo+comision;
+			
+			printf("El sueldo total es %d", sueldototal);
+			
+			break;
+		}
+		
+		case 3:{
+			int i=0,n=3, nota, totalnota, promedio, examen, trabajo;
+			float total;
+			
+			for(int i=0;i<n;i++){
+				printf("Ingrese la nota del parcial: ");
+				scanf("%d", & nota);
+				
+				totalnota=totalnota+nota;
+			}
+			
+			promedio=totalnota/n;
+			
+			printf("Ingrese la nota del examen final: ");
+			scanf("%d", &examen);
+			
+			printf("Ingrese la calificacion del trabajo final: ");
+			scanf("%d", &trabajo);
+			
+			
+			total=promedio*0.55+examen*0.30+trabajo*0.15;
+			
+			printf("El total de las notas es %f", total);
+			
+			break;
+		}
+		
+		case 4:{
+			int numeros;
+			printf("Ingrese los numeros para ver cuales son pares: ");
+			scanf("%d", &numeros);
+			
+			if(numeros%2==0){
+				printf("%d",numeros);
+			}
+			else{
+			printf("El numero es inpar");
+			}
+			
+			break;
+		}
+		
+		
+		
+		
+	}
+
+
+
+
+};
