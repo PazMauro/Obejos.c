@@ -1,0 +1,89 @@
+/*
+#include <stdio.h>
+int main(){
+	int A=0, B=1, C=2, D=0;
+	
+	do{
+		D=A+B+C;
+		
+		if(D==87){
+			printf("Los numeros %d, %d y %d sumados dan 87", A, B, C);
+			break;
+		}
+		else {
+			A++, B++, C++;
+		}
+		
+	}while(D=87);
+}
+*/
+
+/*
+#include <stdio.h>
+int main(){
+	int A, B, C, prom;
+	
+	printf("Ingrese la primer nota: ");
+	scanf("%d", & A);
+	
+	printf("Ingrese la segunda nota: ");
+	scanf("%d", & B);
+	
+	printf("Ingrese la tercer nota: ");
+	scanf("%d", & C);
+	
+	prom=(A+B+C)/3;
+	
+	printf("El promedio de las tres notas es %d"),prom;
+}
+*/
+
+/*
+#include <stdio.h>
+int main(){
+	int A;
+	printf("Ingrese el valor numérico positivo, mayor que cero ingresado es par o impar: ");
+	scanf("%d", & A);
+	
+	if(A>0){
+		
+		if(A%2==0){
+			printf("El numero es par");
+		}
+		else {
+			printf("El numero es impar");
+		}
+	}
+	else{
+	printf("El numero no es mayor a 0");	
+	}
+}
+*/
+
+#include <stdio.h>
+int main(){
+	
+	int nota, notasprueba, tarea, i, n=4, prom;
+	
+	for(i=0; i<n ; i++){
+		printf("Ingrese la nota de la prueba del alumno: ");
+		scanf("%d", & nota);
+		
+		notasprueba=notasprueba+nota;
+	}
+	
+	printf("Ingrese la nota de la tarea: ");
+	scanf("%d", & tarea);
+	
+	prom=(notasprueba+nota)/5;
+	
+	if(prom>=6 && prom<=10){
+		printf("El alumno esta aprobado");
+	}
+	else if(prom>= 1 && prom<=5){
+		printf("El alumno esta desaprobado");
+	}
+	else{
+		printf("estas haciendo mal las cuentas");
+	}
+}
