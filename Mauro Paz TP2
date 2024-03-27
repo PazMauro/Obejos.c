@@ -2,7 +2,7 @@
 int main(){
 	int caser, alumnos, precio, preciototal;
 	float precioxalumnos;
-	printf("Ingrese el numero para hacer: 1(ver un algoritmo para ver cuanto hay que pagar por el alquiler de un micro)\n 2(para ver cuanto gana el vendedor con su comision)\n 3(para ver las notas del alumno)\n 4()\n 5()\n");
+	printf("Ingrese el numero para hacer:\n1(ver un algoritmo para ver cuanto hay que pagar por el alquiler de un micro)\n2(para ver cuanto gana el vendedor con su comision)\n3(para ver las notas del alumno)\n4(para ver los numeros pares entre 2 numeros)\n5(para ver en q kilometro de la carretera se encontraran)\n");
 	scanf("%d", & caser);
 	
 	switch(caser) {
@@ -87,20 +87,34 @@ int main(){
 		}
 		
 		case 4:{
-			int numeros;
-			printf("Ingrese los numeros para ver cuales son pares: ");
-			scanf("%d", &numeros);
+			int numeros, numI, numF, i;
+	
 			
-			if(numeros%2==0){
-				printf("%d",numeros);
-			}
-			else{
-			printf("El numero es inpar");
-			}
+			printf("Ingrese el numero inicial: ");
+			scanf("%d", & numI);
 			
+			printf("Ingrese el numero final: ");
+			scanf("%d", & numF);
+			
+			for(i=numI ;i<numF; i++){
+				
+			if(i%2==0){
+				printf("%d\n",i);
+			}	
+			}
 			break;
 		}
 		
+		case 5: {
+			int cuen;
+			
+			cuen=((150-70)/2)+70;
+			
+			printf("Los vehiculos se encontraran en el kilometro: %d", cuen);
+			
+			
+			break;
+		}
 		
 		
 		
