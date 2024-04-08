@@ -60,10 +60,11 @@ int main(){
 }
 */
 
+/*
 4-
 #include <stdio.h>
 int main(){
-	
+
 	int nota, notasprueba, tarea, i, n=4, prom;
 	
 	for(i=0; i<n ; i++){
@@ -87,4 +88,121 @@ int main(){
 	else{
 		printf("estas haciendo mal las cuentas");
 	}
+}
+
+*/
+
+/*
+5-
+#include <stdio.h>
+int main(){
+	int nota;
+	
+	printf("Ingrese la nota que se saco: ");
+	scanf("%d", & nota);
+	
+	if(nota>=6 && nota<=7){
+		printf("Aprobado");
+	}
+	else if(nota>=2 && nota<=5){
+		printf("Reprobado");
+	}
+	else if(nota>=8 && nota<=10){
+		printf("aprobaste, felicitaciones");
+	}
+	else if(nota==1){
+		printf("reprobaste, Debes esforzarte mas");
+	}
+	else if(nota>10){
+		printf("Estas ingresando mal los numeros");
+	}
+}
+*/
+
+
+/*
+
+6-
+#include <stdio.h>
+int main(){
+	
+	int sueldo, b=0;
+	float alquiler;
+	
+	printf("Ingrese cuanto cobra: ");
+	scanf("%d", & sueldo);
+	if(sueldo<=202){
+		b=0;
+	}
+	else if(202<sueldo && sueldo<=607){
+		b=5;
+	}
+	else if(607<sueldo && sueldo<=1013){
+		b=10;
+	}
+	else if(1013<sueldo && sueldo<=1418){
+		b=15;
+	}
+	else if(1418<sueldo){
+		b=25;
+	}
+	alquiler=(sueldo*b)/100;
+	printf("El precio del alquiler es %f", alquiler);
+}
+
+*/
+
+/*
+7-
+#include <stdio.h>
+int main(){
+	
+	int hora, minutos;
+	
+	printf("Ingrese la hora: ");
+	scanf("%d", & hora);
+	
+	printf("Ingrese los minutos: ");
+	scanf("%d", & minutos);
+	
+	if(hora>=1 && hora<=12){
+		printf("%d:%d AM",hora,minutos);
+	}
+	
+	if(hora>=13 && hora<=24){
+		printf("%d:%d PM",hora, minutos);
+	}
+	
+	
+}
+*/
+
+/*
+8-
+#include <stdio.h>
+int main(){
+	
+	int capital, ahorro;
+	
+	printf("Ingrese el capital que desea invertir en el banco: ");
+	scanf("%d", & capital);
+	
+	ahorro = capital * 0.2;
+	printf("El banco le paga %d",ahorro);
+}
+
+*/
+
+//9-
+#include <stdio.h>
+int main(){
+	int count = 0, edadp = 50, edadh = 20;
+	do {
+	count = count + 1;
+	edadh = edadh +1;
+	edadp = edadp + 1;
+	}while (edadp = (edadh * 2));
+	printf ("%d", count);
+	
+	
 }
