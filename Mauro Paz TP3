@@ -207,9 +207,160 @@ int main(){
 
 */
 
-//-10
+/*-10
 #include<stdio.h>
 int main(){
 	
-	int 
+	int hora, minutos, segundos;
+	
+	printf("Ingrese las horas: ");
+	scanf("%d", & hora);
+	
+	printf("Ingrese los minutos: ");
+	scanf("%d", & minutos);
+	
+	printf("Ingrese los segundos: ");
+	scanf("%d", & segundos);
+	
+	minutos+=hora*60;
+	segundos+=minutos*60;
+	
+	printf("Las horas, los minutos y los segundos expresados en segundos es %d", segundos);
+}
+*/
+
+
+/*11-
+#include <stdio.h>
+main(){
+	
+
+	int i=0,n=3, nota, totalnota, promedio, examen, trabajo;
+	
+			float total;
+			
+			for(int i=0;i<n;i++){
+				printf("Ingrese la nota del parcial: ");
+				scanf("%d", & nota);
+				
+				totalnota=totalnota+nota;
+			}
+			
+			promedio=totalnota/n;
+			
+			printf("Ingrese la nota del examen final: ");
+			scanf("%d", &examen);
+			
+			printf("Ingrese la calificacion del trabajo final: ");
+			scanf("%d", &trabajo);
+			
+			
+			total=promedio*0.55+examen*0.30+trabajo*0.15;
+			
+			printf("El total de las notas es %f", total);
+}
+*/
+
+/*
+12-
+#include <stdio.h>
+main(){
+
+		int n=3, venta,totalventas,comision,sueldototal,sueldo;
+			
+			printf("Ingrese el sueldo base: ");
+			scanf("%d", & sueldo);
+			
+			
+			
+			for(int i=0; i<n; i++){
+				printf("Ingrese la suma de la venta: ");
+				scanf("%d", & venta);
+				
+				totalventas=totalventas+venta;
+			}
+			
+			comision=totalventas*0.1;
+			
+			sueldototal=sueldo+comision;
+			
+			printf("El sueldo total es %d", sueldototal);
+			
+}
+*/
+/*
+13-
+#include <stdio.h>
+main(){
+	
+	int compra,total;
+	
+	printf("Ingrese el monto de la compra: ");
+	scanf("%d", & compra);
+	
+	total=compra-(compra*0.15);
+	
+	printf("El total a pagar es de %d", total);
+}
+*/
+
+/*
+14-
+#include <stdio.h>
+main(){
+	
+	int n, va;
+	
+	printf("Ingrese el numero: ");
+	scanf("%d", & n);
+	
+	if(n>=0){
+		printf("El valor absoluto es %d", n);
+	}
+	else{
+		va=n*-1;
+		printf("El valor absoluto es %d", va);
+	}
+}
+*/
+
+/*
+15-
+#include <stdio.h>
+main(){
+	
+	int h, m, total, porch, porcm;
+	
+	printf("Ingrese la cantidad de hombre que hay en el grupo: ");
+	scanf("%d", & h);
+	
+	printf("Ingrese la cantidad de mujeres que hay en el grupo: ");
+	scanf("%d", & m);
+	
+	total=h+m;
+	
+	porch=(h*100)/total;
+	porcm=(m*100)/total;
+	
+	printf("El porcentaje de hombre en el grupo es de %d\n", porch);
+	printf("El porcentaje de mujeres en el grupo es de %d", porcm);
+}
+*/
+
+//16-
+#include<stdio.h>
+main(){
+	
+	int pa, d;
+	float equivalencia;
+	
+	printf("Ingrese la cantidad en pesos argentinos: ");
+	scanf("%d", & pa);
+	
+	printf("Ingrese lo que vale un dolar: ");
+	scanf("%d", & d);
+	
+	equivalencia=pa/d;
+	
+	printf("La equivalencia de pesos en dolares es %f",equivalencia);
 }
