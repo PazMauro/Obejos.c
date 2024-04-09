@@ -193,16 +193,23 @@ int main(){
 
 */
 
-//9-
+/*-9
 #include <stdio.h>
 int main(){
-	int count = 0, edadp = 50, edadh = 20;
-	do {
-	count = count + 1;
-	edadh = edadh +1;
-	edadp = edadp + 1;
-	}while (edadp = (edadh * 2));
-	printf ("%d", count);
 	
+	int edadp=50, edadh=20, resultado, anos;
 	
+	resultado=edadh*2;
+	anos=edadp-resultado;
+	
+	printf("Tienen que pasar %d anos para que el papa tenga el doble de la edad del hijo",anos);
+}
+
+*/
+
+//-10
+#include<stdio.h>
+int main(){
+	
+	int 
 }
