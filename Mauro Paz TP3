@@ -1,241 +1,217 @@
-/*1-
-#include <stdio.h>
-int main(){
-	int A=0, B=1, C=2, D=0;
-	
-	do{
-		D=A+B+C;
-		
-		if(D==87){
-			printf("Los numeros %d, %d y %d sumados dan 87", A, B, C);
-			break;
-		}
-		else {
-			A++, B++, C++;
-		}
-		
-	}while(D=87);
-}
-*/
-
-/*2-
-#include <stdio.h>
-int main(){
-	int A, B, C, prom;
-	
-	printf("Ingrese la primer nota: ");
-	scanf("%d", & A);
-	
-	printf("Ingrese la segunda nota: ");
-	scanf("%d", & B);
-	
-	printf("Ingrese la tercer nota: ");
-	scanf("%d", & C);
-	
-	prom=(A+B+C)/3;
-	
-	printf("El promedio de las tres notas es %d"),prom;
-}
-*/
-
-/*3-
-#include <stdio.h>
-int main(){
-	int A;
-	printf("Ingrese el valor numérico positivo, mayor que cero ingresado es par o impar: ");
-	scanf("%d", & A);
-	
-	if(A>0){
-		
-		if(A%2==0){
-			printf("El numero es par");
-		}
-		else {
-			printf("El numero es impar");
-		}
-	}
-	else{
-	printf("El numero no es mayor a 0");	
-	}
-}
-*/
-
-/*
-4-
-#include <stdio.h>
-int main(){
-
-	int nota, notasprueba, tarea, i, n=4, prom;
-	
-	for(i=0; i<n ; i++){
-		printf("Ingrese la nota de la prueba del alumno: ");
-		scanf("%d", & nota);
-		
-		notasprueba=notasprueba+nota;
-	}
-	
-	printf("Ingrese la nota de la tarea: ");
-	scanf("%d", & tarea);
-	
-	prom=(notasprueba+nota)/5;
-	
-	if(prom>=6 && prom<=10){
-		printf("El alumno esta aprobado");
-	}
-	else if(prom>= 1 && prom<=5){
-		printf("El alumno esta desaprobado");
-	}
-	else{
-		printf("estas haciendo mal las cuentas");
-	}
-}
-
-*/
-
-/*
-5-
-#include <stdio.h>
-int main(){
-	int nota;
-	
-	printf("Ingrese la nota que se saco: ");
-	scanf("%d", & nota);
-	
-	if(nota>=6 && nota<=7){
-		printf("Aprobado");
-	}
-	else if(nota>=2 && nota<=5){
-		printf("Reprobado");
-	}
-	else if(nota>=8 && nota<=10){
-		printf("aprobaste, felicitaciones");
-	}
-	else if(nota==1){
-		printf("reprobaste, Debes esforzarte mas");
-	}
-	else if(nota>10){
-		printf("Estas ingresando mal los numeros");
-	}
-}
-*/
-
-
-/*
-
-6-
-#include <stdio.h>
-int main(){
-	
-	int sueldo, b=0;
-	float alquiler;
-	
-	printf("Ingrese cuanto cobra: ");
-	scanf("%d", & sueldo);
-	if(sueldo<=202){
-		b=0;
-	}
-	else if(202<sueldo && sueldo<=607){
-		b=5;
-	}
-	else if(607<sueldo && sueldo<=1013){
-		b=10;
-	}
-	else if(1013<sueldo && sueldo<=1418){
-		b=15;
-	}
-	else if(1418<sueldo){
-		b=25;
-	}
-	alquiler=(sueldo*b)/100;
-	printf("El precio del alquiler es %f", alquiler);
-}
-
-*/
-
-/*
-7-
-#include <stdio.h>
-int main(){
-	
-	int hora, minutos;
-	
-	printf("Ingrese la hora: ");
-	scanf("%d", & hora);
-	
-	printf("Ingrese los minutos: ");
-	scanf("%d", & minutos);
-	
-	if(hora>=1 && hora<=12){
-		printf("%d:%d AM",hora,minutos);
-	}
-	
-	if(hora>=13 && hora<=24){
-		printf("%d:%d PM",hora, minutos);
-	}
-	
-	
-}
-*/
-
-/*
-8-
-#include <stdio.h>
-int main(){
-	
-	int capital, ahorro;
-	
-	printf("Ingrese el capital que desea invertir en el banco: ");
-	scanf("%d", & capital);
-	
-	ahorro = capital * 0.2;
-	printf("El banco le paga %d",ahorro);
-}
-
-*/
-
-/*-9
-#include <stdio.h>
-int main(){
-	
-	int edadp=50, edadh=20, resultado, anos;
-	
-	resultado=edadh*2;
-	anos=edadp-resultado;
-	
-	printf("Tienen que pasar %d anos para que el papa tenga el doble de la edad del hijo",anos);
-}
-
-*/
-
-/*-10
-#include<stdio.h>
-int main(){
-	
-	int hora, minutos, segundos;
-	
-	printf("Ingrese las horas: ");
-	scanf("%d", & hora);
-	
-	printf("Ingrese los minutos: ");
-	scanf("%d", & minutos);
-	
-	printf("Ingrese los segundos: ");
-	scanf("%d", & segundos);
-	
-	minutos+=hora*60;
-	segundos+=minutos*60;
-	
-	printf("Las horas, los minutos y los segundos expresados en segundos es %d", segundos);
-}
-*/
-
-
-/*11-
 #include <stdio.h>
 main(){
 	
-
-	int i=0,n=3, nota, totalnota, promedio, examen, trabajo;
+	int menu;
+	
+	printf("Ingrese el numero del menu que deseas realizar: ");
+	scanf("%d", & menu);
+	
+	switch(menu){
+		
+		case 1:{
+					
+			int A=0, B=1, C=2, D=0;
+			
+			do{
+				D=A+B+C;
+				
+				if(D==87){
+					printf("Los numeros %d, %d y %d sumados dan 87", A, B, C);
+					break;
+				}
+				else {
+					A++, B++, C++;
+				}
+				
+			}while(D=87);
+		
+					break;
+		}
+		
+		case 2:{
+			
+			int A, B, C, prom;
+			
+			printf("Ingrese la primer nota: ");
+			scanf("%d", & A);
+			
+			printf("Ingrese la segunda nota: ");
+			scanf("%d", & B);
+			
+			printf("Ingrese la tercer nota: ");
+			scanf("%d", & C);
+			
+			prom=(A+B+C)/3;
+			
+			printf("El promedio de las tres notas es %d"),prom;
+					break;
+		}
+		
+		case 3:{
+			
+			int A;
+			printf("Ingrese el valor numérico positivo, mayor que cero ingresado es par o impar: ");
+			scanf("%d", & A);
+			
+			if(A>0){
+				
+				if(A%2==0){
+					printf("El numero es par");
+				}
+				else {
+					printf("El numero es impar");
+				}
+			}
+			else{
+			printf("El numero no es mayor a 0");	
+			}
+					break;
+				}
+				
+		case 4:{
+			
+			int nota, notasprueba, tarea, i, n=4, prom;
+			
+			for(i=0; i<n ; i++){
+				printf("Ingrese la nota de la prueba del alumno: ");
+				scanf("%d", & nota);
+				
+				notasprueba=notasprueba+nota;
+			}
+			
+			printf("Ingrese la nota de la tarea: ");
+			scanf("%d", & tarea);
+			
+			prom=(notasprueba+nota)/5;
+			
+			if(prom>=6 && prom<=10){
+				printf("El alumno esta aprobado");
+			}
+			else if(prom>= 1 && prom<=5){
+				printf("El alumno esta desaprobado");
+			}
+			else{
+				printf("estas haciendo mal las cuentas");
+			}
+					
+			break;
+		}
+		
+		case 5:{
+				
+		int nota;
+	
+			printf("Ingrese la nota que se saco: ");
+			scanf("%d", & nota);
+			
+			if(nota>=6 && nota<=7){
+				printf("Aprobado");
+			}
+			else if(nota>=2 && nota<=5){
+				printf("Reprobado");
+			}
+			else if(nota>=8 && nota<=10){
+				printf("aprobaste, felicitaciones");
+			}
+			else if(nota==1){
+				printf("reprobaste, Debes esforzarte mas");
+			}
+			else if(nota>10){
+				printf("Estas ingresando mal los numeros");
+			}
+			break;
+		}
+		
+		case 6:{
+			int sueldo, b=0;
+			float alquiler;
+			
+			printf("Ingrese cuanto cobra: ");
+			scanf("%d", & sueldo);
+			if(sueldo<=202){
+				b=0;
+			}
+			else if(202<sueldo && sueldo<=607){
+				b=5;
+			}
+			else if(607<sueldo && sueldo<=1013){
+				b=10;
+			}
+			else if(1013<sueldo && sueldo<=1418){
+				b=15;
+			}
+			else if(1418<sueldo){
+				b=25;
+			}
+			alquiler=(sueldo*b)/100;
+			printf("El precio del alquiler es %f", alquiler);
+					break;
+		}
+		case 7:{
+			int hora, minutos;
+			
+			printf("Ingrese la hora: ");
+			scanf("%d", & hora);
+			
+			printf("Ingrese los minutos: ");
+			scanf("%d", & minutos);
+			
+			if(hora>=1 && hora<=12){
+				printf("%d:%d AM",hora,minutos);
+			}
+			
+			if(hora>=13 && hora<=24){
+				printf("%d:%d PM",hora, minutos);
+			}
+			
+			
+					break;
+		}
+		
+		case 8:{
+			int capital, ahorro;
+			
+			printf("Ingrese el capital que desea invertir en el banco: ");
+			scanf("%d", & capital);
+			
+			ahorro = capital * 0.2;
+			printf("El banco le paga %d",ahorro);
+			break;
+		}
+		
+		case 9:{
+			
+			int edadp=50, edadh=20, resultado, anos;
+			
+			resultado=edadh*2;
+			anos=edadp-resultado;
+			
+			printf("Tienen que pasar %d anos para que el papa tenga el doble de la edad del hijo",anos);
+			break;
+		}
+		
+		case 10:{
+			int hora, minutos, segundos;
+			
+			printf("Ingrese las horas: ");
+			scanf("%d", & hora);
+			
+			printf("Ingrese los minutos: ");
+			scanf("%d", & minutos);
+			
+			printf("Ingrese los segundos: ");
+			scanf("%d", & segundos);
+			
+			minutos+=hora*60;
+			segundos+=minutos*60;
+			
+			printf("Las horas, los minutos y los segundos expresados en segundos es %d", segundos);
+			break;
+		}
+		
+		case 11:{
+			
+			int i=0,n=3, nota, totalnota, promedio, examen, trabajo;
 	
 			float total;
 			
@@ -258,14 +234,11 @@ main(){
 			total=promedio*0.55+examen*0.30+trabajo*0.15;
 			
 			printf("El total de las notas es %f", total);
-}
-*/
-
-/*
-12-
-#include <stdio.h>
-main(){
-
+			break;
+		}
+		
+		case 12:{
+			
 		int n=3, venta,totalventas,comision,sueldototal,sueldo;
 			
 			printf("Ingrese el sueldo base: ");
@@ -285,82 +258,97 @@ main(){
 			sueldototal=sueldo+comision;
 			
 			printf("El sueldo total es %d", sueldototal);
+			break;
+		}
+		
+		case 13:{
 			
-}
-*/
-/*
-13-
-#include <stdio.h>
-main(){
-	
-	int compra,total;
-	
-	printf("Ingrese el monto de la compra: ");
-	scanf("%d", & compra);
-	
-	total=compra-(compra*0.15);
-	
-	printf("El total a pagar es de %d", total);
-}
-*/
-
-/*
-14-
-#include <stdio.h>
-main(){
-	
-	int n, va;
-	
-	printf("Ingrese el numero: ");
-	scanf("%d", & n);
-	
-	if(n>=0){
-		printf("El valor absoluto es %d", n);
+			int compra,total;
+			
+			printf("Ingrese el monto de la compra: ");
+			scanf("%d", & compra);
+			
+			total=compra-(compra*0.15);
+			
+			printf("El total a pagar es de %d", total);
+				break;
+				}
+				
+		case 14:{
+			
+			int n, va;
+			
+			printf("Ingrese el numero: ");
+			scanf("%d", & n);
+			
+			if(n>=0){
+				printf("El valor absoluto es %d", n);
+			}
+			else{
+				va=n*-1;
+				printf("El valor absoluto es %d", va);
+			}
+			break;
+		}
+		
+		case 15:{
+			
+			int h, m, total, porch, porcm;
+			
+			printf("Ingrese la cantidad de hombre que hay en el grupo: ");
+			scanf("%d", & h);
+			
+			printf("Ingrese la cantidad de mujeres que hay en el grupo: ");
+			scanf("%d", & m);
+			
+			total=h+m;
+			
+			porch=(h*100)/total;
+			porcm=(m*100)/total;
+			
+			printf("El porcentaje de hombre en el grupo es de %d\n", porch);
+			printf("El porcentaje de mujeres en el grupo es de %d", porcm);
+			break;
+		}
+		
+		case 16:{
+			
+			int pa, d;
+			float equivalencia;
+			
+			printf("Ingrese la cantidad en pesos argentinos: ");
+			scanf("%d", & pa);
+			
+			printf("Ingrese lo que vale un dolar: ");
+			scanf("%d", & d);
+			
+			equivalencia=pa/d;
+			
+			printf("La equivalencia de pesos en dolares es %f",equivalencia);
+			break;
+		}
+		
+		case 17:{
+			int genero, edad, peso;
+			float FCM;
+			
+			printf("Ingrese el genero del individuo: 1=Masculino 2=Femenino: ");
+			scanf("%d", & genero);
+			
+			printf("Ingrese la edad del individuo: ");
+			scanf("%d", & edad);
+			
+			printf("Ingrese el peso del individuo: ");
+			scanf("%d", & peso);
+			
+			if(genero==1){
+				FCM= ( ( 210 - ( 0.5*edad ) ) - 0.01*peso) + 4;
+			}
+			if(genero==2){
+				FCM = ( 210 - ( 0.5 * edad ) ) - 0.01*peso;
+			}
+			printf("La frecuencia cardiaca maxima es de %f", FCM);
+			break;
+		}
 	}
-	else{
-		va=n*-1;
-		printf("El valor absoluto es %d", va);
-	}
-}
-*/
-
-/*
-15-
-#include <stdio.h>
-main(){
-	
-	int h, m, total, porch, porcm;
-	
-	printf("Ingrese la cantidad de hombre que hay en el grupo: ");
-	scanf("%d", & h);
-	
-	printf("Ingrese la cantidad de mujeres que hay en el grupo: ");
-	scanf("%d", & m);
-	
-	total=h+m;
-	
-	porch=(h*100)/total;
-	porcm=(m*100)/total;
-	
-	printf("El porcentaje de hombre en el grupo es de %d\n", porch);
-	printf("El porcentaje de mujeres en el grupo es de %d", porcm);
-}
-*/
-
-//16-
-#include<stdio.h>
-main(){
-	
-	int pa, d;
-	float equivalencia;
-	
-	printf("Ingrese la cantidad en pesos argentinos: ");
-	scanf("%d", & pa);
-	
-	printf("Ingrese lo que vale un dolar: ");
-	scanf("%d", & d);
-	
-	equivalencia=pa/d;
-	
-	printf("La equivalencia de pesos en dolares es %f",equivalencia);
 }
