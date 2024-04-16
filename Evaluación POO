@@ -1,0 +1,182 @@
+#include<stdio.h>
+main(){
+	//tema 6
+	int menu;
+	
+	printf("Ingrese el numero del menu que deseas realizar: ");
+	scanf("%d", & menu);
+	
+	switch(menu){
+		case 1:{
+			
+			int kilo, tipo, tamano, vendido;
+			
+			printf("Ingrese cuantos kilos de uva va a vender:");
+			scanf("%d", & kilo);//varieable de la cantidad de uva
+			
+			printf("Ingrese el tipo de uva 1 si es A y 2 si es B: ");
+			scanf("%d", & tipo);//tipo de uva
+			
+			printf("Ingrese el tamaño de la uva: ");
+			scanf("%d", & tamano);//tamano de uva
+			
+			if(tipo==1 && tamano == 1){
+				vendido=kilo*200;//cuenta para saber cuando vale el kilo del tipo 1 de uva y tamano 1
+			}
+			
+			if(tipo==1 && tamano == 2){
+				vendido=kilo*300;//cuenta para saber cuando vale el kilo del tipo 1 de uva y tamano 2
+			}
+			
+			if(tipo==2 && tamano==1){
+				vendido=kilo*300;//cuenta para saber cuando vale el kilo del tipo 2 de uva y tamano 1
+			}
+			
+			if(tipo==2 && tamano==2){
+				vendido=kilo*500;//cuenta para saber cuando vale el kilo del tipo 2 de uva y tamano 2
+			}
+			
+			printf("El vendedor recibira %d por la venta", vendido);//imprime la salida
+			break;
+		}
+		
+		case 2:{
+			
+			int   base, potencia, count=0,i;
+			
+			printf("Ingrese el numero de base: ");
+			scanf("%d", & base);
+			
+			if(base<0){//si el numero es positivo
+				printf("El numero base es es negativo\n");break;
+			}
+			
+			printf("Ingrese el numero de la potencia: ");
+			scanf("%d", & potencia);
+			
+			
+			if(potencia<0){//si el numero es positivo
+				printf("El numero de la potencia es negativo\n");break;
+			}
+			
+			for(i=0; i<potencia ; i++){
+				
+				count=count+base;//en este calculo se calcula el resultado de la base potenciada el numero de la potencia
+			}
+			
+			printf("El resultado es %d", count);//inprime el resultado
+			
+			break;
+		}
+		
+		case 3:{
+			
+			int n, radio, i, count=0;
+			float PI=3.14, R;
+			
+			printf("Ingrese el calculo que deseas realizar: 1=A, 2=B, 3=C"),
+			scanf("%d", & n);//eligue la opcion
+			
+			printf("Ingrese el valor del radio: ");
+			scanf("%d", & radio);//INgressa los valores
+			
+			if(n==1){
+				R= 2*PI*radio;//calcula la longitud de la circunferencia
+			}
+			
+			if(n==2){
+			
+			for(i=0;i<n;i++){
+			count=count+radio;
+			}
+			
+			R=PI*count;//Area de la circunferencia
+			}
+			
+			if(n==3){
+				
+				for(i=0;i<n;i++){
+					count=count+radio;
+				}
+				R=(4/3)*PI*count;//volumen de la esfera
+			}
+			
+			printf("El resultado del calculo es %f", R);//Imprime el resultado
+			
+			break;
+		}
+		
+		case 4:{
+			
+			int genero, edad, aa;
+			
+			printf("Ingrese el genero del individuo 1=masculino | 2=femenino: ");
+			scanf("%d", & genero);
+			
+			printf("Ingrese la edad del individuo: ");
+			scanf("%d", & edad);
+			
+			printf("Ingrese la cantidad de años aportados: ");
+			scanf("%d", & aa);//variable de años aportados
+			
+			if(genero==1){
+				if(edad>=65){
+					if(aa>20){
+						printf("El individuo puede jubilarse");break;//si es masculino mas de 65 y tiene 20 años de aportacion que imprima el printf sino que diga que no se puede jubilar
+					}else{
+						printf("El individuo no puede jubilarse");break;
+					}
+				}else{
+					printf("El individuo no puede jubilarse");break;
+				}
+			}
+			else if(genero==2){
+				if(edad>=65){
+					if(aa>20){
+						printf("El individuo puede jubilarse");break;//si es femenina mas de 60 y tiene 20 años de aportacion que imprima el printf sino que diga que no se puede jubilar
+					}else{
+						printf("El individuo no puede jubilarse");break;
+					}
+				}else{
+					printf("El individuo no puede jubilarse");break;
+				}
+			}
+			
+			
+			break;
+		}
+		
+		case 5:{
+			
+			int hijos, edad, sub, i;
+			
+			printf("Ingrese el numero de hijos que tiene la familia: ");
+			scanf("%d", & hijos);
+			
+			for(i=0; i<hijos; i++){//preguntar por cada hijo la edad
+			printf("Ingrese la edad del hijo: ");
+			scanf("%d", & edad);
+			}
+			
+			if(hijos>=1 && hijos <=2){
+				sub=hijos*700;//calcular el subcidio
+			}
+			if(hijos>=3 && hijos<=5){
+				sub=hijos*800;//calcular el sucidio
+			}
+			if(hijos>=6	){
+				sub=hijos*1200;//calcular el sucidio
+			}
+			if(edad>=6 && edad<=18){
+				sub=sub+1000;//le agrega 1000 adicional si uno de los hijos esta en edad escolar
+			}
+			
+			printf("El monto de subsidios que va a recibir la familia es de %d", sub);
+			
+			break;
+		}
+		
+	}
+	
+	
+}
