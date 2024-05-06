@@ -44,7 +44,7 @@ int main() {
 		el=0;
 		printf("Termino la ronda N %d \n", i+1);
 		if(us==3){
-			printf("：anaste la partida! :P\n\n");
+			printf("：Ganaste la partida! :P\n\n");
 			break;
 		}else if(riv==3){
 			printf("Perdiste la partida ;(\n\n ");
