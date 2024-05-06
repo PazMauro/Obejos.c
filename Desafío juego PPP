@@ -24,7 +24,7 @@ int main() {
     if (usuario == maquina) {
         printf("Empate\n\n");
     } else if ((usuario == 1 && maquina == 3) || (usuario == 2 && maquina == 1) || (usuario == 3 && maquina == 2)) {
-        printf("：anaste!\n\n");
+        printf("：Ganaste!\n\n");
         yo= yo+1;
     } else {
         printf("Perdiste\n\n ");
