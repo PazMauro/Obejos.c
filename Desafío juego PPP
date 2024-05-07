@@ -60,7 +60,7 @@ int main() {
 	if(us==riv){
 	printf("Empate.");
 	}
-	printf("desea volver a jugar? \n 1=si 2=no: ");
+	printf("\ndesea volver a jugar? \n1=si 2=no: ");
 	scanf("%d", & jug);
 }while (jug==1);
  printf("FIN");
