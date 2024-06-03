@@ -1,81 +1,115 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <windows.h>
 
-#define N_MAX 20
+#define N_MAX 20  // Definir el tamaño máximo del tablero
 
+using namespace std;
+
+// Declaración de variables globales
 char tablero[N_MAX][N_MAX];
 int filas = 0, columnas = 0;
 int x_pirata, y_pirata, x_tesoro, y_tesoro;
+int movimiento = 0;  // Contador de movimientos
 
+// Declaración de funciones
 void inicializarTablero();
 void dibujarTablero();
 void BuscarTesoro();
 int generarNumeroAleatorio(int min, int max);
+void setColor(int textColor, int bgColor);
 
 int main() {
-    srand(time(NULL));  // Inicializar generador de números aleatorios
+    srand(time(NULL));  // Inicializar el generador de números aleatorios
     
     int opcion;
     char jugar_nuevamente;
     
+    // Bucle principal del menú
     do {
-        printf("\n--- Menú ---\n");//Interfaz
-        printf("1. Inicializar Tablero\n");
-        printf("2. Dibujar Tablero\n");
-        printf("3. Buscar Tesoro\n");
-        printf("4. Salir\n");
-        printf("Ingrese una opcion: ");
-        scanf("%d", &opcion);
+        cout << "\n--- Menu ---\n";
+        cout << "1. Inicializar Tablero\n";
+        cout << "2. Dibujar Tablero\n";
+        cout << "3. Buscar Tesoro\n";
+        cout << "4. Salir\n";
+        cout << "Ingrese una opcion: ";
+        cin >> opcion;
         
+        // Selección de la opción del menú
         switch (opcion) {
             case 1:
-            	printf("Teniendo en cuenta que el agua te va a sacar 2 filas y 2 columnas\n");
-                printf("Ingrese las dimensiones del tablero (maximo %d): ", N_MAX);
-                scanf("%d", &filas);
+                // Inicializar el tablero
+                cout << "Teniendo en cuenta que el agua te va a sacar 2 filas y 2 columnas\n";
+                cout << "Ingrese las dimensiones del tablero (maximo " << N_MAX << "): ";
+                cin >> filas;
                 columnas = filas;
                 inicializarTablero();
-                printf("Tablero inicializado.\n");
+                cout << "Tablero inicializado.\n";
                 break;
             case 2:
+                // Dibujar el tablero
                 dibujarTablero();
                 break;
             case 3:
+                // Iniciar la búsqueda del tesoro
                 BuscarTesoro();
+                if (tablero[x_pirata][y_pirata] == 'T') {
+                    // Si el pirata encuentra el tesoro
+                    cout << "¡Encontraste el Gran Tesoro!\n";
+                }
                 break;
             case 4:
-                printf("Saliendo del programa.\n");
+                // Salir del programa
+                cout << "Saliendo del programa.\n";
                 break;
             default:
-                printf("Opción inválida. Intente nuevamente.\n");
+                // Opción inválida
+                cout << "Opcion invalida. Intente nuevamente.\n";
                 break;
         }
         
-        if (opcion == 3 && tablero[x_pirata][y_pirata] == 'T') {
-            printf("¡Encontraste el Gran Tesoro!\n");
-            printf("¿Desea jugar nuevamente? (s/n): ");
-            scanf(" %c", &jugar_nuevamente);
+        // Verificar si el juego ha terminado
+        if (opcion == 3 && (tablero[x_pirata][y_pirata] == 'T' || movimiento >= 50 || tablero[x_pirata][y_pirata] == '~')) {
+            // Preguntar al usuario si desea jugar nuevamente
+            if (tablero[x_pirata][y_pirata] == 'T') {
+                cout << "¡Has encontrado el tesoro!\n";
+            } else if (tablero[x_pirata][y_pirata] == '~') {
+                cout << "¡El pirata ha caido al agua y ha muerto!\n";
+            } else if (movimiento >= 50) {
+                cout << "Has alcanzado el limite de movimientos. No has encontrado el tesoro.\n";
+            }
+
+            cout << "¿Desea jugar nuevamente? (s/n): ";
+            cin >> jugar_nuevamente;
             if (jugar_nuevamente == 's' || jugar_nuevamente == 'S') {
                 inicializarTablero(); // Reiniciar el juego
+                system("cls"); // Limpiar la pantalla
                 opcion = 0; // Reiniciar el menú
+            } else {
+                opcion = 4; // Salir del programa
             }
         }
+        
     } while (opcion != 4);
     
     return 0;
 }
 
+// Función para inicializar el tablero
 void inicializarTablero() {
-    int i, j;
-    
     if (filas <= 4 || filas > N_MAX || columnas <= 4 || columnas > N_MAX) {
-        printf("Dimensiones inválidas. Deben ser mayores que 4 y menores o iguales a %d.\n", N_MAX);
+        // Validar dimensiones del tablero
+        cout << "Dimensiones invalidas. Deben ser mayores que 4 y menores o iguales a " << N_MAX << ".\n";
         return;
     }
     
-    // Rellenar el tablero con agua
-    for (i = 0; i < filas; i++) {
-        for (j = 0; j < columnas; j++) {
+    // Reiniciar el contador de movimientos
+    movimiento = 0;
+
+    // Llenar el tablero con agua
+    for (int i = 0; i < filas; i++) {
+        for (int j = 0; j < columnas; j++) {
             if (i == 0 || j == 0 || i == filas - 1 || j == columnas - 1) {
                 tablero[i][j] = '~';  // Agua en los bordes
             } else {
@@ -85,10 +119,10 @@ void inicializarTablero() {
     }
     
     // Colocar puentes en las esquinas
-    tablero[0][columnas - 1] = 'O';
-    tablero[filas - 1][0] = 'O';
+    tablero[0][columnas - 1] = ' ';
+    tablero[filas - 1][0] = ' ';
     
-    // Colocar al pirata y al tesoro en casillas aleatorias
+    // Colocar al pirata y al tesoro en posiciones aleatorias
     x_pirata = generarNumeroAleatorio(1, filas - 2);
     y_pirata = generarNumeroAleatorio(1, columnas - 2);
     tablero[x_pirata][y_pirata] = 'P';
@@ -99,42 +133,74 @@ void inicializarTablero() {
     } while (x_tesoro == x_pirata && y_tesoro == y_pirata);
 }
 
+// Función para dibujar el tablero
 void dibujarTablero() {
-    int i, j;
-    printf("\nGuia del juego:\nEl agua es ~ y el puente es O\n");
+    cout << "\nGuia del juego:\nEl agua es ~ y el puente es O\n";
+    cout << "Movimientos: " << movimiento << "\n";  // Mostrar contador de movimientos
     if (filas <= 0 || filas > N_MAX || columnas <= 0 || columnas > N_MAX) {
-        printf("El tablero no ha sido inicializado correctamente.\n");
+        cout << "El tablero no ha sido inicializado correctamente.\n";
         return;
     }
 
-    
-    for (i = 0; i < filas; i++) {
-        for (j = 0; j < columnas; j++) {
+    // Dibujar el tablero
+    for (int i = 0; i < filas; i++) {
+        for (int j = 0; j < columnas; j++) {
             if (i == x_tesoro && j == y_tesoro) {
-                printf("  "); // No mostrar la ubicación del tesoro
+                setColor(14, 14); // Fondo color arena, texto color arena (tesoro invisible)
+                cout << "  ";
             } else {
-                printf("%c ", tablero[i][j]);
+                // Configurar colores y mostrar caracteres
+                switch (tablero[i][j]) {
+                    case '~':
+                        setColor(11, 1); // Texto celeste, fondo azul
+                        cout << " ~";
+                        break;
+                    case 'P':
+                        setColor(14, 0); // Texto amarillo, fondo negro
+                        cout << "P";
+                        break;
+                    case ' ':
+                        if ((i == 0 && j == columnas - 1) || (i == filas - 1 && j == 0)) {
+                            setColor(0, 6); // Fondo marrón oscuro para los puentes
+                            cout << "  ";
+                        } else {
+                            setColor(7, 14); // Texto blanco, fondo color arena
+                            cout << "  ";
+                        }
+                        break;
+                    case 'X':
+                        setColor(15, 14); // Texto blanco, fondo color arena
+                        cout << "  ";
+                        break;
+                    default:
+                        setColor(7, 14); // Texto blanco (default), fondo color arena
+                        cout << tablero[i][j];
+                        break;
+                }
             }
+            setColor(7, 0); // Restablecer a blanco después de cada carácter
         }
-        printf("\n");
+        cout << "\n";
     }
 }
 
+// Función para buscar el tesoro
 void BuscarTesoro() {
-    int movimiento = 0;
     char direccion;
     
     if (filas <= 0 || filas > N_MAX || columnas <= 0 || columnas > N_MAX) {
-        printf("El tablero no ha sido inicializado correctamente.\n");
+        cout << "El tablero no ha sido inicializado correctamente.\n";
         return;
     }
     
+    // Bucle para la búsqueda del tesoro
     do {
-        printf("Ingrese la dirección (w, a, s, d): ");
-        scanf(" %c", &direccion);
+        cout << "Ingrese la dirección (w, a, s, d): ";
+        cin >> direccion;
         
         int dx = 0, dy = 0;
         
+        // Determinar la dirección del movimiento
         switch (direccion) {
             case 'a':
                 dy = -1;
@@ -149,7 +215,7 @@ void BuscarTesoro() {
                 dx = -1;
                 break;
             default:
-                printf("Dirección inválida. Intente nuevamente.\n");
+                cout << "Direccion invalida. Intente nuevamente.\n";
                 continue;
         }
         
@@ -162,32 +228,71 @@ void BuscarTesoro() {
             // Mover el pirata a la nueva posición
             x_pirata = nueva_x;
             y_pirata = nueva_y;
+            // Verificar si el pirata cae en el agua
+            if (tablero[x_pirata][y_pirata] == '~') {
+                dibujarTablero();
+                cout << "¡El pirata ha caido al agua y ha muerto!\n";
+                cout << "¿Desea jugar nuevamente? (s/n): ";
+                char jugar_nuevamente;
+                cin >> jugar_nuevamente;
+                if (jugar_nuevamente == 's' || jugar_nuevamente == 'S') {
+                    inicializarTablero(); // Reiniciar el juego
+                    system("cls"); // Limpiar la pantalla
+                    break;
+                } else {
+                    exit(0); // Terminar el programa
+                }
+            }
             tablero[x_pirata][y_pirata] = 'P';
         } else {
-            printf("Movimiento inválido. Intente nuevamente.\n");
+            cout << "Movimiento invalido. Intente nuevamente.\n";
             continue;
         }
         
         dibujarTablero();
         
-        movimiento++;
+        movimiento++;  // Incrementar el contador de movimientos
         
-        if (tablero[x_pirata][y_pirata] == 'T') {
-            printf("¡Encontraste el Gran Tesoro!\n");
-            break;
-        } else if (tablero[x_pirata][y_pirata] == 'P' && x_pirata == x_tesoro && y_pirata == y_tesoro) {
-            printf("¡Has encontrado el tesoro!\n");
-            break;
+        // Verificar si el pirata encuentra el tesoro
+        if (tablero[x_pirata][y_pirata] == 'P' && x_pirata == x_tesoro && y_pirata == y_tesoro) {
+            cout << "¡Has encontrado el tesoro!\n";
+            cout << "¿Desea jugar nuevamente? (s/n): ";
+            char jugar_nuevamente;
+            cin >> jugar_nuevamente;
+            if (jugar_nuevamente == 's' || jugar_nuevamente == 'S') {
+                inicializarTablero(); // Reiniciar el juego
+                system("cls"); // Limpiar la pantalla
+                break;
+            } else {
+                exit(0); // Terminar el programa
+            }
         }
         
+        // Verificar si se alcanza el límite de movimientos
         if (movimiento >= 50) {
-            printf("Has alcanzado el límite de movimientos. No has encontrado el tesoro.\n");
-            break;
+            cout << "Has alcanzado el limite de movimientos. No has encontrado el tesoro.\n";
+            cout << "¿Desea jugar nuevamente? (s/n): ";
+            char jugar_nuevamente;
+            cin >> jugar_nuevamente;
+            if (jugar_nuevamente == 's' || jugar_nuevamente == 'S') {
+                inicializarTablero(); // Reiniciar el juego
+                system("cls"); // Limpiar la pantalla
+                break;
+            } else {
+                exit(0); // Terminar el programa
+            }
         }
         
-    } while (1);
+    } while (true);
 }
 
+// Función para generar un número aleatorio entre un mínimo y un máximo
 int generarNumeroAleatorio(int min, int max) {
     return min + rand() % (max - min + 1);
+}
+
+// Función para cambiar el color del texto y del fondo en la consola
+void setColor(int textColor, int bgColor) {
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, (bgColor << 4) | textColor);
 }
