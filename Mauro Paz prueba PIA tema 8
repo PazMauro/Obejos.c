@@ -1,4 +1,5 @@
 primer ejercicio
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <windows.h>
@@ -52,8 +53,8 @@ void calcularSumas(int matriz[4][3]) {
     establecerColor(10, 0);
     printf("Suma de la diagonal principal: %d\n", sumaDiagonalPrincipal);
     printf("Suma de la diagonal secundaria: %d\n", sumaDiagonalSecundaria);
-    printf("Suma de la primera y última fila: %d\n", sumaPrimeraUltimaFila);
-    printf("Suma de la primera y última columna: %d\n", sumaPrimeraUltimaColumna);
+    printf("Suma de la primera y ultima fila: %d\n", sumaPrimeraUltimaFila);
+    printf("Suma de la primera y ultima columna: %d\n", sumaPrimeraUltimaColumna);
     establecerColor(7, 0); // Restablecer al color predeterminado
 }
 
@@ -64,11 +65,11 @@ void menu() {
     do {
         // Mostrar opciones del menú
         establecerColor(14, 0);
-        printf("\nMenú de opciones:\n");
+        printf("\nMenu de opciones:\n");
         printf("1. Crear Matriz\n");
         printf("2. Dibujar Matriz\n");
         printf("3. Salir\n");
-        printf("Ingrese una opción: ");
+        printf("Ingrese una opcion: ");
         scanf("%d", &opcion);
         establecerColor(7, 0);
 
@@ -100,9 +101,9 @@ void menu() {
                 establecerColor(7, 0);
                 break;
             default:
-                // Manejar opciones inválidas
+                // Manejar opciones invalidas
                 establecerColor(12, 0);
-                printf("Opción inválida. Intente nuevamente.\n");
+                printf("Opción invalida. Intente nuevamente.\n");
                 establecerColor(7, 0);
                 break;
         }
@@ -111,9 +112,10 @@ void menu() {
 
 // Función principal
 int main() {
-    menu(); // Llamar a la función del menú
+    menu(); // Llamar a la función del menu
     return 0;
 }
+
 
 segundo ejercicio
 #include <stdio.h>
