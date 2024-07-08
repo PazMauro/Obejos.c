@@ -1,0 +1,223 @@
+primer ejercicio
+#include <stdio.h>
+#include <stdlib.h>
+#include <windows.h>
+
+// Función para establecer el color del texto y el fondo en la consola
+void establecerColor(int colorTexto, int colorFondo) {
+    HANDLE hConsola = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsola, (colorFondo << 4) | colorTexto);
+}
+
+// Función para imprimir una matriz de 4x3
+void imprimirMatriz(int matriz[4][3]) {
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("%d\t", matriz[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+// Función para calcular y imprimir las sumas de partes específicas de la matriz
+void calcularSumas(int matriz[4][3]) {
+    int sumaDiagonalPrincipal = 0;
+    int sumaDiagonalSecundaria = 0;
+    int sumaPrimeraUltimaFila = 0;
+    int sumaPrimeraUltimaColumna = 0;
+
+    // Calcular sumas
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 3; j++) {
+            // Suma de la diagonal principal
+            if (i == j) {
+                sumaDiagonalPrincipal += matriz[i][j];
+            }
+            // Suma de la diagonal secundaria
+            if (i + j == 2) {
+                sumaDiagonalSecundaria += matriz[i][j];
+            }
+            // Suma de la primera y última fila
+            if (i == 0 || i == 3) {
+                sumaPrimeraUltimaFila += matriz[i][j];
+            }
+            // Suma de la primera y última columna
+            if (j == 0 || j == 2) {
+                sumaPrimeraUltimaColumna += matriz[i][j];
+            }
+        }
+    }
+
+    // Imprimir las sumas calculadas con color
+    establecerColor(10, 0);
+    printf("Suma de la diagonal principal: %d\n", sumaDiagonalPrincipal);
+    printf("Suma de la diagonal secundaria: %d\n", sumaDiagonalSecundaria);
+    printf("Suma de la primera y última fila: %d\n", sumaPrimeraUltimaFila);
+    printf("Suma de la primera y última columna: %d\n", sumaPrimeraUltimaColumna);
+    establecerColor(7, 0); // Restablecer al color predeterminado
+}
+
+// Función para mostrar el menú y manejar la entrada del usuario
+void menu() {
+    int opcion;
+    int matriz[4][3];
+    do {
+        // Mostrar opciones del menú
+        establecerColor(14, 0);
+        printf("\nMenú de opciones:\n");
+        printf("1. Crear Matriz\n");
+        printf("2. Dibujar Matriz\n");
+        printf("3. Salir\n");
+        printf("Ingrese una opción: ");
+        scanf("%d", &opcion);
+        establecerColor(7, 0);
+
+        // Manejar opciones del menú
+        switch (opcion) {
+            case 1:
+                // Crear matriz
+                establecerColor(11, 0);
+                printf("Ingrese 12 números para llenar la matriz 4x3:\n");
+                for (int i = 0; i < 4; i++) {
+                    for (int j = 0; j < 3; j++) {
+                        scanf("%d", &matriz[i][j]);
+                    }
+                }
+                establecerColor(7, 0);
+                break;
+            case 2:
+                // Dibujar matriz y calcular sumas
+                establecerColor(11, 0);
+                printf("La matriz ingresada es:\n");
+                imprimirMatriz(matriz);
+                calcularSumas(matriz);
+                establecerColor(7, 0);
+                break;
+            case 3:
+                // Salir del programa
+                establecerColor(12, 0);
+                printf("Saliendo del programa...\n");
+                establecerColor(7, 0);
+                break;
+            default:
+                // Manejar opciones inválidas
+                establecerColor(12, 0);
+                printf("Opción inválida. Intente nuevamente.\n");
+                establecerColor(7, 0);
+                break;
+        }
+    } while (opcion != 3);
+}
+
+// Función principal
+int main() {
+    menu(); // Llamar a la función del menú
+    return 0;
+}
+
+segundo ejercicio
+#include <stdio.h>
+#include <windows.h>
+
+// Tamaño de la matriz
+#define FILAS 20
+#define COLUMNAS 20
+
+// Función para cambiar el color del texto
+void setColor(int color) {
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, color);
+}
+
+// Función para mostrar el menú
+void mostrarMenu() {
+    setColor(10); //  verde claro
+    printf("1. Crear Matriz\n");
+    setColor(11); // cyan claro
+    printf("2. Dibujar Matriz\n");
+    setColor(13); // Magenta claro
+    printf("3. Imprimir Primera Columna\n");
+    setColor(15); // blanco
+    printf("4. Salir\n");
+}
+
+// Función para crear la matriz
+void crearMatriz(int matriz[FILAS][COLUMNAS]) {
+    setColor(15); // White
+    printf("Introduzca los elementos de la matriz 20x20:\n");
+    for (int i = 0; i < FILAS; i++) {
+        for (int j = 0; j < COLUMNAS; j++) {
+            printf("Elemento [%d][%d]: ", i, j);
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+}
+
+// Función para dibujar la matriz
+void dibujarMatriz(int matriz[FILAS][COLUMNAS]) {
+    setColor(15); // White
+    printf("Matriz 20x20:\n");
+    for (int i = 0; i < FILAS; i++) {
+        for (int j = 0; j < COLUMNAS; j++) {
+            printf("%d ", matriz[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+// Función para imprimir la primera columna de la matriz
+void imprimirPrimeraColumna(int matriz[FILAS][COLUMNAS]) {
+    setColor(15); // White
+    printf("Primera columna de la matriz:\n");
+    for (int i = 0; i < FILAS; i++) {
+        printf("%d\n", matriz[i][0]);
+    }
+}
+
+int main() {
+    int matriz[FILAS][COLUMNAS];
+    int opcion;
+    int matrizCreada = 0;
+
+    do {
+        setColor(15); // White
+        printf("\nMenu:\n");
+        mostrarMenu();
+
+        printf("Selecciona una opcion: ");
+        scanf("%d", &opcion);
+
+        switch(opcion) {
+            case 1:
+                crearMatriz(matriz);
+                matrizCreada = 1;
+                break;
+            case 2:
+                if (matrizCreada) {
+                    dibujarMatriz(matriz);
+                } else {
+                    setColor(4); // rojo clarito
+                    printf("Primero debe crear la matriz.\n");
+                }
+                break;
+            case 3:
+                if (matrizCreada) {
+                    imprimirPrimeraColumna(matriz);
+                } else {
+                    setColor(4); // rojo clarito
+                    printf("Primero debe crear la matriz.\n");
+                }
+                break;
+            case 4:
+                setColor(15); // blanco
+                printf("Saliendo...\n");
+                break;
+            default:
+                setColor(4); // rojo clarito
+                printf("Opción no válida\n");
+                break;
+        }
+    } while(opcion != 4);
+
+    return 0;
+}
