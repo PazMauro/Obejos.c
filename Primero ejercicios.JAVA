@@ -3,6 +3,16 @@ public class Main {
     public static void main(String[] args) {
         
         for (int I = 1; I <= 100; I++) {
+            System.out.println(+I);
+        }
+        }
+        }
+
+2.
+public class Main {
+    public static void main(String[] args) {
+        
+        for (int I = 1; I <= 100; I++) {
             
             if (I % 2 == 0){
             System.out.println("El numero par es " + I);
@@ -14,8 +24,7 @@ public class Main {
     }
 }
 
-
-2.
+3.
 public class Main{
     
 public static void main(String[] args) {
