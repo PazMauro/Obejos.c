@@ -52,6 +52,17 @@ public class Main{
 }
 
 3.
+public class Main{
+    public static void main(String[] args) {
+    
+    String nombre = "Fernando";
+    
+    System.out.println("¡Bienvenido "+nombre+ "!");
+    
+}
+}
+
+4.
 import java.util.Scanner;
 
 public class Main{
@@ -64,8 +75,5 @@ public class Main{
     String nombre = scanner.nextLine();
     
     System.out.println("¡Bienvenido "+nombre+ "!");
-    
 }
 }
-
-4.
