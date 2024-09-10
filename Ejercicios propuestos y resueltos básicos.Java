@@ -34,3 +34,38 @@ public class Main{
     }
 }
 }
+
+3.import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args) {
+    
+    Scanner scanner = new Scanner(System.in);
+    
+    System.out.print("Ingrese un nombre: ");
+    
+    String nombre = scanner.nextLine();
+    
+    System.out.println("¡Bienvenido "+nombre+ "!");
+    
+}
+}
+
+3.
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args) {
+    
+    Scanner scanner = new Scanner(System.in);
+    
+    System.out.print("Ingrese un nombre: ");
+    
+    String nombre = scanner.nextLine();
+    
+    System.out.println("¡Bienvenido "+nombre+ "!");
+    
+}
+}
+
+4.
