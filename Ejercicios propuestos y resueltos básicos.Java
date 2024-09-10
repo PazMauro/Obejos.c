@@ -77,3 +77,29 @@ public class Main{
     System.out.println("¡Bienvenido "+nombre+ "!");
 }
 }
+
+5.
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args) {
+    
+    Scanner scanner = new Scanner(System.in);
+    
+    System.out.println("Ingrese el diametro del radio: ");
+    int R = scanner.nextInt();
+    
+    int area = Math.PI * Math.pow (R,2);
+    
+    println("El area es: "+ area);
+    
+}
+}
+
+6.
+
+7.
+
+8.
+
+9.
