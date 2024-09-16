@@ -189,10 +189,34 @@ public class Main{
 
 
 10.
-
+public class Main{
+    public static void main(String[] args) {
+    
+    int numero=0;
+    
+    while(numero<100){
+        
+        numero++;
+        
+        System.out.println(numero);
+        
+    }
+        
+        
+    }
+}
 
 11.
-
+public class Main{
+    public static void main(String[] args) {
+        
+        for(int i=1;i<=100; i++){
+            
+            System.out.println(i);
+        }
+        
+    }
+}
 
 12.
 
