@@ -98,8 +98,31 @@ public class Main{
 }
 
 6.
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args) {
+    
+    Scanner scanner = new Scanner(System.in);
+    
+    
+    System.out.print("Ingrese un numero para ver si es divisible por 2 y el resto da 0: ");
+    
+    int numero = scanner.nextInt();
+    
+    if(numero % 2 ==0 ){
+        System.out.println("El resto da 0 ");
+    }
+    else{
+        System.out.print("El resto no da 0");
+    }
+}
+}
+
 
 7.
+
+
 
 8.
 
