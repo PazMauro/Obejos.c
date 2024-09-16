@@ -141,7 +141,25 @@ public class Main{
 
 
 8.
+import java.util.Scanner;
 
+public class Main{
+    public static void main(String[] args) {
+    
+    Scanner scanner = new Scanner(System.in);
+    
+    
+    System.out.print("Ingrese una letra para cumplir con lo q pide el ejercicio: ");
+    
+    String palabra = scanner.nextLine();
+    
+    char ASCII = palabra.charAt(0);
+    
+    int numero = (int) ASCII;
+    
+    System.out.println(numero);
+}
+}
 
 
 9.
