@@ -121,9 +121,27 @@ public class Main{
 
 
 7.
+import java.util.Scanner;
 
+public class Main{
+    public static void main(String[] args) {
+    
+    Scanner scanner = new Scanner(System.in);
+    
+    
+    System.out.print("Ingrese el numero para ver si pertenece a la tabla ASCII: ");
+    
+    int numero = scanner.nextInt();
+    
+    char ASCII = (char) numero;
+    
+    System.out.println(ASCII);
+}
+}
 
 
 8.
+
+
 
 9.
