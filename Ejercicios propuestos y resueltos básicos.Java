@@ -219,7 +219,24 @@ public class Main{
 }
 
 12.
-
+public class Main{
+    public static void main(String[] args) {
+    
+    int numero=0;
+    
+    while(numero<100){
+        
+        numero++;
+        
+        if(numero % 2==0 && numero % 3==0){
+            
+            System.out.println("El numero es divisor de 2 y de 3: "+ numero);
+    }
+        
+        
+    }
+}
+}
 
 13.
 
