@@ -86,12 +86,13 @@ public class Main{
     
     Scanner scanner = new Scanner(System.in);
     
-    System.out.println("Ingrese el diametro del radio: ");
+    System.out.println("Ingrese el diametro del radio:");
+    
     int R = scanner.nextInt();
     
-    int area = Math.PI * Math.pow (R,2);
+    double area = Math.PI * Math.pow(R, 2);
     
-    println("El area es: "+ area);
+    System.out.println("El area es: "+ area);
     
 }
 }
