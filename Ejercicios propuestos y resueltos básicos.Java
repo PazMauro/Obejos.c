@@ -163,3 +163,56 @@ public class Main{
 
 
 9.
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args) {
+    
+    Scanner scanner = new Scanner(System.in);
+    
+    double precio;
+    
+    do{
+    System.out.print("Ingrese el precio del producto: ");
+    
+    precio = scanner.nextInt();
+    
+    double IVA= (precio * 0.21);
+    
+    double PT= precio+IVA;
+    
+    System.out.println("El precio del producto es: " + PT);
+    
+}while(precio!=0);
+}
+}
+
+
+10.
+
+
+11.
+
+
+12.
+
+
+13.
+
+
+14.
+
+
+15.
+
+
+16.
+
+
+17.
+
+
+18.
+
+
+19.
