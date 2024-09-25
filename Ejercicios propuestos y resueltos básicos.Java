@@ -239,7 +239,32 @@ public class Main{
 }
 
 13.
-
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.print("Cuantas ventas vas a realizar: ");
+		
+		int V;
+		
+		V = scanner.nextInt();
+		
+		int TP=0;
+		
+		for(int i=0; i<V; i++){
+		    System.out.print("Ingrese el precio de la venta: ");
+		    int P;
+		    P = scanner.nextInt();
+		    TP = TP + P;
+		}
+		System.out.println("El total de ventas q se realizaron son: "+ V);
+	    System.out.println("El precio total es: "+ TP);
+		
+	}
+}
 
 14.
 
