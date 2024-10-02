@@ -268,7 +268,8 @@ public class Main
 
 14.
 import java.util.Scanner;
-public class Ecuacion2GradoApp {
+public class main 
+{
  
     public static void main(String[] args) {
         
