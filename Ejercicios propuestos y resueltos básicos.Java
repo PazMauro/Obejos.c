@@ -282,8 +282,7 @@ public class main
         int c = scanner.nextInt();
  
         double discriminante = Math.pow(b, 2)-(4*a*c);
- 
-        
+
         System.out.println(">>"+discriminante);
  
         if(discriminante > 0){
