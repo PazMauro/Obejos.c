@@ -283,12 +283,10 @@ public class main
  
         double discriminante = Math.pow(b, 2)-(4*a*c);
  
-        //Mensaje de traza
+        
         System.out.println(">>"+discriminante);
  
         if(discriminante > 0){
-            //Tambien se puede hacer por parte si lo ves más facil
-            //recuerda que debes tener en cuenta la prioridad de elementos
             double x1 = ((b*(-1))+Math.sqrt(discriminante))/(2*a);
             double x2 = ((b*(-1))-Math.sqrt(discriminante))/(2*a);
  
@@ -300,3 +298,28 @@ public class main
 }
 
 15.
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n;
+
+        do {
+            System.out.println("Ingrese un valor para ver si es mayor o igual a 0:");
+            n = scanner.nextInt();
+
+            if (n < 0) {
+                System.out.println("El número es menor que 0. Inténtelo de nuevo.");
+            }
+        } while (n < 0);
+
+        if (n > 0) {
+            System.out.println("El número " + n + " es mayor a 0.");
+        } else {
+            System.out.println("El número " + n + " es igual a 0.");
+        }
+        scanner.close();
+    }
+}
+
