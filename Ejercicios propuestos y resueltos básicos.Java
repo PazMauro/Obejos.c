@@ -318,6 +318,17 @@ public class Main {
         } else {
             System.out.println("El número " + n + " es igual a 0.");
         }
+
+16.
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        
+        System.out.print("Ingrese la contraseña: ");
+        String contra = Scanner.nextLine();
+    }
+}
         scanner.close();
     }
 }
