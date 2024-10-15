@@ -322,14 +322,73 @@ public class Main {
 16.
 import java.util.Scanner;
 
-public class Main {
+public class VerificarContrasena {
     public static void main(String[] args) {
-        
-        System.out.print("Ingrese la contraseña: ");
-        String contra = Scanner.nextLine();
-    }
-}
+        // Contraseña predeterminada
+        String contrasenaCorrecta = "miContrasena123";
+        Scanner scanner = new Scanner(System.in);
+
+        int intentosRestantes = 3; // Se permiten 3 intentos
+        String contrasenaIntroducida = ""; // Para almacenar la entrada del usuario
+
+        // Bucle que se repite hasta que el usuario acierte o se queden sin intentos
+        while (intentosRestantes > 0 && !contrasenaIntroducida.equals(contrasenaCorrecta)) {
+            System.out.print("Introduce la contraseña: ");
+            contrasenaIntroducida = scanner.nextLine();
+
+            // Verificar si la contraseña es correcta
+            if (contrasenaIntroducida.equals(contrasenaCorrecta)) {
+                System.out.println("Enhorabuena");
+                break; // Condición de salida, ya no se piden más contraseñas
+            } else {
+                intentosRestantes--; // Restar un intento
+                if (intentosRestantes > 0) {
+                    System.out.println("Contraseña incorrecta. Te quedan " + intentosRestantes + " intento(s).");
+                }
+            }
+        }
+
+        // Si se acaban los intentos y no se ha acertado
+        if (!contrasenaIntroducida.equals(contrasenaCorrecta)) {
+            System.out.println("Has agotado todos los intentos.");
+        }
+
         scanner.close();
     }
 }
+
+
+17.
+import java.util.Scanner;
+
+public class DiaLaboral {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Introduce un día de la semana: ");
+        String dia = scanner.nextLine().toLowerCase(); // Convertir la entrada a minúsculas para evitar errores
+
+        switch (dia) {
+            case "lunes":
+            case "martes":
+            case "miércoles":
+            case "miercoles":
+            case "jueves":
+            case "viernes":
+                System.out.println(dia + " es un día laboral.");
+                break;
+            case "sábado":
+            case "sabado":
+            case "domingo":
+                System.out.println(dia + " no es un día laboral.");
+                break;
+            default:
+                System.out.println("El día introducido no es válido.");
+                break;
+        }
+
+        scanner.close();
+    }
+}
+
 
