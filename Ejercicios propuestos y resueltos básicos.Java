@@ -324,31 +324,29 @@ import java.util.Scanner;
 
 public class VerificarContrasena {
     public static void main(String[] args) {
-        // Contraseña predeterminada
+
         String contrasenaCorrecta = "miContrasena123";
         Scanner scanner = new Scanner(System.in);
 
-        int intentosRestantes = 3; // Se permiten 3 intentos
-        String contrasenaIntroducida = ""; // Para almacenar la entrada del usuario
+        int intentosRestantes = 3;
+        String contrasenaIntroducida = "";
 
-        // Bucle que se repite hasta que el usuario acierte o se queden sin intentos
+
         while (intentosRestantes > 0 && !contrasenaIntroducida.equals(contrasenaCorrecta)) {
             System.out.print("Introduce la contraseña: ");
             contrasenaIntroducida = scanner.nextLine();
 
-            // Verificar si la contraseña es correcta
             if (contrasenaIntroducida.equals(contrasenaCorrecta)) {
                 System.out.println("Enhorabuena");
-                break; // Condición de salida, ya no se piden más contraseñas
+                break;
             } else {
-                intentosRestantes--; // Restar un intento
+                intentosRestantes--;
                 if (intentosRestantes > 0) {
                     System.out.println("Contraseña incorrecta. Te quedan " + intentosRestantes + " intento(s).");
                 }
             }
         }
 
-        // Si se acaban los intentos y no se ha acertado
         if (!contrasenaIntroducida.equals(contrasenaCorrecta)) {
             System.out.println("Has agotado todos los intentos.");
         }
@@ -366,7 +364,7 @@ public class DiaLaboral {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Introduce un día de la semana: ");
-        String dia = scanner.nextLine().toLowerCase(); // Convertir la entrada a minúsculas para evitar errores
+        String dia = scanner.nextLine().toLowerCase();
 
         switch (dia) {
             case "lunes":
@@ -390,5 +388,3 @@ public class DiaLaboral {
         scanner.close();
     }
 }
-
-
